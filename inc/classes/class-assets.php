@@ -31,22 +31,34 @@ class Assets {
 	public function register_styles() {
 		// Register styles
 		wp_register_style( 'bootstrap-css', ASM_DIR_URI .'/assets/src/libraries/bootstrap/css/bootstrap.css', [], false, 'all' );
-		wp_register_style( 'style-css', get_stylesheet_uri(), [], filemtime( ASM_DIR_PATH . '/style.css' ), 'all' );
+		wp_register_style( 'slick-css', ASM_DIR_URI .'/assets/css/slick.css', [], false, 'all' );
+		wp_register_style( 'slick-theme-css', ASM_DIR_URI .'/assets/css/slick-theme.css', ['slick-css'], false, 'all' );
+		//wp_register_style( 'fontawesome.min-css', ASM_DIR_URI .'/assets/fonts/fontawesome/css/fontawesome.min.css', [], false, 'all' );
 		wp_register_style( 'main-css', ASM_DIR_URI .'/assets/css/main.css', ['style-css'], filemtime( ASM_DIR_PATH . '/assets/css/main.css' ), 'all' );
+		wp_register_style( 'style-css', get_stylesheet_uri(), [], filemtime( ASM_DIR_PATH . '/style.css' ), 'all' );
 
 		// enqueue styles
 		wp_enqueue_style( 'bootstrap-css' );
-		wp_enqueue_style( 'style-css' );
+		wp_enqueue_style( 'slick-css' );
+		wp_enqueue_style( 'slick-theme-css' );
 		wp_enqueue_style( 'main-css' );
+		//wp_enqueue_style( 'fontawesome.min-css' );
+		wp_enqueue_style( 'style-css' );
 	}
 
 	public function register_scripts() {
 		// Register scripts
-		wp_register_script( 'main-js', ASM_DIR_URI .'/assets/js/main.js', [], filemtime( ASM_DIR_PATH . '/assets/js/main.js' ), true );
+		wp_register_script( 'slick-js', ASM_DIR_URI .'/assets/js/slick.min.js', ['jquery'], false, true );
+		wp_register_script( 'gsap-min-js', ASM_DIR_URI .'/assets/js/gsap/minified/gsap.min.js', [], false, true );
+		wp_register_script( 'ScrollTrigger-min-js', ASM_DIR_URI .'/assets/js/gsap/minified/ScrollTrigger.min.js', ['gsap-min-js'], false, true );
+		wp_register_script( 'main-js', ASM_DIR_URI .'/assets/js/main.js', ['jquery','slick-js'], filemtime( ASM_DIR_PATH . '/assets/js/main.js' ), true );
 		wp_register_script( 'bootstrap-js', ASM_DIR_URI .'/assets/src/libraries/bootstrap/js/bootstrap.min.js', [ 'jquery' ], null, true );
 		
     	// enqueue scripts
     	wp_enqueue_script( 'bootstrap-js' );
+    	wp_enqueue_script( 'gsap-min-js' );
+    	wp_enqueue_script( 'ScrollTrigger-min-js' );
     	wp_enqueue_script( 'main-js' );
+    	wp_enqueue_script( 'slick-js' );
 	}
 }

@@ -549,6 +549,35 @@ a:hover {
   border: 1px solid #6C5D4E;
 }
 
+.div1, .div2 {
+  height: 100vh;
+}
+
+.div1 {
+  background-color: pink;
+}
+
+.div2 {
+  background-color: salmon;
+}
+
+.square {
+  margin-left: 10px;
+  width: 150px;
+  height: 20vh;
+  background-color: fuchsia;
+}
+
+.square2 {
+  width: 150px;
+  height: 20vh;
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
 .widget-text-block {
   height: 25em;
 }
@@ -559,18 +588,11 @@ a:hover {
 }
 
 header {
-  /* home page hero */
+  position: relative;
 }
-header .carousel-item {
-  height: 465px;
-  background: url(assets/images/banner/consruction.jpg);
-}
-header #wrapper-footer {
-  padding: 15px 0;
-  background-color: #6C5D4E;
-}
-header #wrapper-footer .site-info {
-  color: white;
+header .front-page-slider {
+  max-width: 100%;
+  overflow: hidden;
 }
 header .home-page-title {
   background-color: #adadad;
@@ -595,36 +617,43 @@ header .content-page-title {
   color: #fff;
   padding: 1.5em 0;
 }
-header .static-image-container {
-  position: relative;
+header .header-stripe {
+  background-color: #6C5D4E;
+  height: 0.2em;
+}
+header .header-image-container {
   max-width: 100%;
+  top: 0;
   padding-left: 0;
   padding-right: 0;
 }
-header .static-image-container img {
+header .header-image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-header .static-image-container h1 {
-  color: #fff;
+header .header-image-container h1 {
+  color: #000;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.1em;
 }
-header .static-image-container .header-text {
+header .header-image-container .header-text {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 10%;
   width: 70%;
   font-weight: normal;
   font-size: 1.2em;
   z-index: 2;
 }
-header .static-image-container .header-text h1, header .static-image-container .header-text p {
-  color: white;
+header .header-image-container .header-text h1 {
+  font-size: 1.2em;
 }
-header .static-image-container .page-header-title {
+header .header-image-container .header-text h1, header .header-image-container .header-text p {
+  color: #fff;
+}
+header .header-image-container .page-header-title {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -632,24 +661,8 @@ header .static-image-container .page-header-title {
   font-size: 1.2em;
   z-index: 2;
 }
-
-.carousel-item {
-  position: relative;
-}
-
-.carousel-item .after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  color: #fff;
-}
-
-.carousel-item:hover .after {
-  display: block;
-  z-index: 2;
+header .header-image-container .page-header-title h1 {
+  color: white;
 }
 
 footer {
@@ -680,8 +693,15 @@ footer a:hover {
 }
 
 .main-nav {
+  position: sticky;
   padding: 1.5em 3.5em 1.5em 2em;
   background-color: #2B4d4F;
+  top: 0;
+  transition: all 600ms ease-in-out;
+  z-index: 10;
+}
+.main-nav .navbar-toggler {
+  background-color: #fff;
 }
 .main-nav .navbar-collapse .nav-item {
   padding-right: 2em;
@@ -725,6 +745,9 @@ footer a:hover {
 .home-text-block-container {
   margin: 1.5em auto;
   background-color: #e2dfdc;
+}
+.home-text-block-container .picture-block {
+  margin-left: -5px;
 }
 .home-text-block-container img {
   width: 100%;
