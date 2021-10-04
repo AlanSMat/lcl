@@ -1,0 +1,42 @@
+@use "functions" as *;
+
+$color-primary: #2B4d4F;
+$color-primary-700: tint($color-primary,10%);
+$color-primary-600: tint($color-primary,20%);
+$color-primary-500: tint($color-primary,30%);
+$color-primary-400: tint($color-primary,40%);
+$color-primary-350: tint($color-primary,50%);
+$color-primary-300: tint($color-primary,60%);
+$color-primary-200: tint($color-primary,70%);
+$color-primary-100: tint($color-primary,80%);
+
+$color-secondary: #6C5D4E;
+$color-secondary-700: tint($color-secondary,10%);
+$color-secondary-600: tint($color-secondary,20%);
+$color-secondary-500: tint($color-secondary,30%);
+$color-secondary-400: tint($color-secondary,40%);
+$color-secondary-350: tint($color-secondary,50%);
+$color-secondary-300: tint($color-secondary,60%);
+$color-secondary-200: tint($color-secondary,70%);
+$color-secondary-100: tint($color-secondary,80%);
+
+//$color-tertiary: #89CF34;
+
+$color-grey: #333;
+$color-grey-700: tint($color-grey,10%);
+$color-grey-600: tint($color-grey,20%);
+$color-grey-500: tint($color-grey,30%);
+$color-grey-400: tint($color-grey,40%);
+$color-grey-350: tint($color-grey,50%);
+$color-grey-300: tint($color-grey,60%);
+$color-grey-200: tint($color-grey,70%);
+$color-grey-100: tint($color-grey,80%);
+
+$color-menu-background: $color-primary;
+$color-menu-hover: $color-secondary;
+$color-menu-active: $color-secondary;
+
+$color-font: #1A2223;
+
+$color-white: #fff;
+$color-black: #000;

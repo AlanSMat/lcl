@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+
+.container {    
+    transition: .5s all ease;
+}
+
+.page-main {
+    margin: 2em auto;
+}

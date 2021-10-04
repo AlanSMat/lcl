@@ -1,0 +1,26 @@
+/** default css for main styles */
+@use '../abstracts/' as *;
+
+body,
+header,
+footer,
+p {
+    color: $color-font;
+    font-family: 'Montserrat','sans-serif';
+}
+header {
+
+}
+footer {
+
+}
+p {
+
+}
+a {
+    color: $color-primary;
+
+    &:hover {
+        color: $color-grey-700;
+    }
+}

@@ -1,0 +1,33 @@
+@use '../abstracts/' as *;
+
+.home-text-block-container {
+    margin: 1.5em auto; 
+    background-color: $color-secondary-100;
+
+    .picture-block {
+        margin-left: -5px;
+    }
+
+    img {
+        width: 100%;
+        height: 25em;
+        object-fit: cover; 
+    }
+    .row {
+        [class^="col-"] {
+            padding: 0 0;
+        }
+        .text-block {
+            padding: 0 1.5em;
+        }
+    }
+    &:nth-child(odd) {
+        background-color: $color-primary-100;
+
+        @include respond-above(sm) {
+            .row {
+                flex-direction: row-reverse;
+            }
+        }
+    }    
+}

@@ -1,0 +1,51 @@
+@use '../abstracts/' as *;
+
+.widget-text-block {
+    height: 25em;
+    @include respond-above(md) {
+        height: inherit;
+    }
+}
+
+// sidebar css
+aside {
+    margin: auto;
+    .widget-sidebar {
+      .wp-block-group {
+        width: 25em;
+        background-color: $color-secondary;
+        margin: auto;
+        h2 {
+          color:#fff;
+          font-size: 1.1em;
+          margin: 0;
+          padding: .6em 1em;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+        ul {
+          background-color: $color-secondary-300;
+          list-style-type: none;
+          padding-left: 0;
+          li {
+            padding: 0.5em 1.5em;
+            cursor: pointer;
+            &:nth-child(even) {
+                background-color: $color-secondary-200;  
+            }
+            a {
+                //font-weight: 600;
+                color: $color-grey-700;
+                text-decoration: none;
+            }
+            &:hover {
+              background-color: $color-secondary-500;
+              a {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

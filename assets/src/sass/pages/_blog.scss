@@ -1,0 +1,21 @@
+@use '../abstracts/' as *;
+
+.blog-excerpt-container {
+  .row {
+    padding-left: 0;
+    margin-left: 0;
+    &:nth-child(odd) {
+      background-color: $color-secondary-200; 
+    } 
+    &:nth-child(even) {
+      background-color: $color-primary-200; 
+    } 
+    [class^="col-"] {
+      padding-left: 0;
+      &:nth-child(even) {
+        padding: 1em;
+      }
+    }
+  }
+} 
+
