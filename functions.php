@@ -17,6 +17,44 @@ if ( ! defined( 'ASM_ASSETS_URI' ) ) {
 	define( 'ASM_ASSETS_URI', untrailingslashit( get_template_directory_uri() ) . "/assets" );
 }
 
+if ( ! defined( 'ASM_BUILD_URI' ) ) {
+	define( 'ASM_BUILD_URI', untrailingslashit( get_template_directory_uri() ) . "/assets/build" );
+}
+
+if ( ! defined( 'ASM_BUILD_JS_URI' ) ) {
+	define( 'ASM_BUILD_JS_URI', untrailingslashit( get_template_directory_uri() ) . "/assets/build/js" );
+}
+
+if ( ! defined( 'ASM_BUILD_IMG_URI' ) ) {
+	define( 'ASM_BUILD_IMG_URI', untrailingslashit( get_template_directory_uri() ) . "/assets/build/src/img" );
+}
+
+if ( ! defined( 'ASM_BUILD_JS_DIR_PATH' ) ) {
+	define( 'ASM_BUILD_JS_DIR_PATH', untrailingslashit( get_template_directory() ) . "/assets/build/js" );
+}
+
+if ( ! defined( 'ASM_BUILD_CSS_DIR_PATH' ) ) {
+	define( 'ASM_BUILD_CSS_DIR_PATH', untrailingslashit( get_template_directory() ) . "/assets/build/css" );
+}
+
+if ( ! defined( 'ASM_BUILD_CSS_URI' ) ) {
+	define( 'ASM_BUILD_CSS_URI', untrailingslashit( get_template_directory_uri() ) . "/assets/build/css" );
+}
+
+if ( ! function_exists( 'dump' ) ) :
+	/**
+	 * debug function outputs php array / object in readable form instead of on one line
+	 * @param $arg, array or object
+	 */
+	function dump( $arg ) {
+		echo '<pre>';
+		var_dump( $arg );
+		echo '</pre>';
+	}
+
+endif;
+add_action( "after_theme_setup","dump" );
+
 require_once ASM_DIR_PATH . '/inc/helpers/autoloader.php';
 //require_once ASM_DIR_PATH . '/inc/helpers/template-tags.php';
 

@@ -23,7 +23,7 @@
 
 //gsap
 gsap.registerPlugin(ScrollTrigger);
-gsap.to(".picture-block", {
+gsap.to(".x", {
   x: 5,
   // y: 300,
   //duration: 1,

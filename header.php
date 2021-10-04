@@ -29,7 +29,7 @@
 	<?php else : ?>
 		<?php get_template_part('template-parts/header/header','page'); ?>    
 	<?php endif ?>
-</header> 
+</header>
 
 
 

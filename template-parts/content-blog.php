@@ -2,6 +2,7 @@
   <?php if( have_posts() ) :  ?>
   <div class="container blog-excerpt-container">
     <?php while ( have_posts() ) : the_post(); ?>
+    <?php dump(the_post()) ?>
     <div class="row mb-4" id="post-<?php the_ID(); ?>">
       <div class="col-lg-4">
         <img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title() ?>" class="img-fluid">

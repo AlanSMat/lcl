@@ -19,32 +19,3 @@
   }
 } 
 
-aside {
-  margin: auto;
-  .widget-sidebar {
-    .wp-block-group {
-      width: 25em;
-      background-color: $color-secondary;
-      margin: auto;
-      h2 {
-        color:#fff;
-        font-size: 1.2em;
-        margin: 0;
-        padding: .8em 1em;
-        text-transform: uppercase;
-        font-weight: bold;
-      }
-      ul {
-        background-color: $color-secondary-200;
-        list-style-type: none;
-        li {
-          padding: .5em 0;
-        }
-        a {
-          text-decoration: none;
-        }
-      }
-    }
-  }
-}
-

@@ -29,8 +29,9 @@ class Assets {
 	}
 
 	public function register_styles() {
-		// Register styles
-		wp_register_style( 'bootstrap-css', ASM_DIR_URI .'/assets/src/libraries/bootstrap/css/bootstrap.css', [], false, 'all' );
+		// register styles
+		wp_register_style( 'bootstrap-css', ASM_DIR_URI .'/assets/src/library/css/bootstrap.min.css', [], false, 'all' );
+		wp_register_style( 'fonts-css', ASM_DIR_URI .'/assets/src/library/fonts/fonts.css', [], false, 'all' );
 		wp_register_style( 'slick-css', ASM_DIR_URI .'/assets/css/slick.css', [], false, 'all' );
 		wp_register_style( 'slick-theme-css', ASM_DIR_URI .'/assets/css/slick-theme.css', ['slick-css'], false, 'all' );
 		//wp_register_style( 'fontawesome.min-css', ASM_DIR_URI .'/assets/fonts/fontawesome/css/fontawesome.min.css', [], false, 'all' );
@@ -47,12 +48,12 @@ class Assets {
 	}
 
 	public function register_scripts() {
-		// Register scripts
+		// register scripts
 		wp_register_script( 'slick-js', ASM_DIR_URI .'/assets/js/slick.min.js', ['jquery'], false, true );
 		wp_register_script( 'gsap-min-js', ASM_DIR_URI .'/assets/js/gsap/minified/gsap.min.js', [], false, true );
 		wp_register_script( 'ScrollTrigger-min-js', ASM_DIR_URI .'/assets/js/gsap/minified/ScrollTrigger.min.js', ['gsap-min-js'], false, true );
-		wp_register_script( 'main-js', ASM_DIR_URI .'/assets/js/main.js', ['jquery','slick-js'], filemtime( ASM_DIR_PATH . '/assets/js/main.js' ), true );
-		wp_register_script( 'bootstrap-js', ASM_DIR_URI .'/assets/src/libraries/bootstrap/js/bootstrap.min.js', [ 'jquery' ], null, true );
+		wp_register_script( 'main-js', ASM_BUILD_JS_URI .'/main.js', ['jquery','slick-js'], false, true );
+		wp_register_script( 'bootstrap-js', ASM_DIR_URI .'/assets/src/library/js/bootstrap.min.js', [ 'jquery' ], false, true );
 		
     	// enqueue scripts
     	wp_enqueue_script( 'bootstrap-js' );
