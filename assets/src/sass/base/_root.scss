@@ -1,12 +1,31 @@
 /** default css for main styles */
 @use '../abstracts/' as *;
 
+
+
+/*----------------
+		Font
+------------------*/
+
+// Global theme font.
+$font__main: "Montserrat", sans-serif;
+
+// Global code font
+$font__code: "Montserrat", sans-serif, monospace;
+
+// Fallback font when font is not loaded via WebFonts JS.
+$font__fallback: sans-serif;
+
+// Base line height.
+$font__base-line-height: 30px;
+
+
 body,
 header,
 footer,
 p {
     color: $color-font;
-    font-family: 'Montserrat','sans-serif';
+    font-family: $font__main;
 }
 header {
 

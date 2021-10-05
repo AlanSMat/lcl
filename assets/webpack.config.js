@@ -1,9 +1,10 @@
 const path = require( 'path' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const CssMinimizerWebpackPlugin = require( 'css-minimizer-webpack-plugin' );
-const cssnano = require( 'cssnano' ); // https://cssnano.co/
+//const cssnano = require( 'cssnano' ); // https://cssnano.co/
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
+const CopyPlugin = require('copy-webpack-plugin'); // https://webpack.js.org/plugins/copy-webpack-plugin/
 
 // JS Directory path.
 const JS_DIR = path.resolve( __dirname, 'src/js' );
@@ -27,7 +28,13 @@ const plugins = ( argv ) => [
 
     new MiniCssExtractPlugin({
         filename: 'css/[name].css'
-    })
+    }),
+
+	new CopyPlugin( {
+		patterns: [
+			{ from: LIB_DIR, to: BUILD_DIR + '/library' }
+		]
+	} ),
 ];
 
 const rules = [
@@ -56,6 +63,17 @@ const rules = [
 			}
 		}
 	},
+	{
+		test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+		exclude: [ IMG_DIR, /node_modules/ ],
+		use: {
+			loader: 'file-loader',
+			options: {
+				name: '[path][name].[ext]',
+				publicPath: 'production' === process.env.NODE_ENV ? '../' : '../../'
+			}
+		}
+	}    
 ];
 
 module.exports = ( env, argv ) => ({

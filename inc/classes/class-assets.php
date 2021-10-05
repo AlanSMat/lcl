@@ -30,13 +30,13 @@ class Assets {
 
 	public function register_styles() {
 		// register styles
-		wp_register_style( 'bootstrap-css', ASM_DIR_URI .'/assets/src/library/css/bootstrap.min.css', [], false, 'all' );
+		wp_register_style( 'bootstrap-css', ASM_BUILD_LIB_URI .'/css/bootstrap.min.css', [], false, 'all' );
 		wp_register_style( 'fonts-css', ASM_DIR_URI .'/assets/src/library/fonts/fonts.css', [], false, 'all' );
-		wp_register_style( 'slick-css', ASM_DIR_URI .'/assets/css/slick.css', [], false, 'all' );
-		wp_register_style( 'slick-theme-css', ASM_DIR_URI .'/assets/css/slick-theme.css', ['slick-css'], false, 'all' );
+		wp_register_style( 'slick-css', ASM_BUILD_LIB_URI .'/css/slick.css', [], false, 'all' );
+		wp_register_style( 'slick-theme-css', ASM_BUILD_LIB_URI .'/css/slick-theme.css', ['slick-css'], false, 'all' );
 		//wp_register_style( 'fontawesome.min-css', ASM_DIR_URI .'/assets/fonts/fontawesome/css/fontawesome.min.css', [], false, 'all' );
-		wp_register_style( 'main-css', ASM_DIR_URI .'/assets/css/main.css', ['style-css'], filemtime( ASM_DIR_PATH . '/assets/css/main.css' ), 'all' );
-		wp_register_style( 'style-css', get_stylesheet_uri(), [], filemtime( ASM_DIR_PATH . '/style.css' ), 'all' );
+		wp_register_style( 'main-css', ASM_BUILD_CSS_URI .'/main.css', [], filemtime( ASM_BUILD_CSS_DIR_PATH . '/main.css' ), 'all' );
+		//wp_register_style( 'style-css', get_stylesheet_uri(), [], filemtime( ASM_DIR_PATH . '/style.css' ), 'all' );
 
 		// enqueue styles
 		wp_enqueue_style( 'bootstrap-css' );
@@ -44,16 +44,16 @@ class Assets {
 		wp_enqueue_style( 'slick-theme-css' );
 		wp_enqueue_style( 'main-css' );
 		//wp_enqueue_style( 'fontawesome.min-css' );
-		wp_enqueue_style( 'style-css' );
+		//wp_enqueue_style( 'style-css' );
 	}
 
 	public function register_scripts() {
 		// register scripts
-		wp_register_script( 'slick-js', ASM_DIR_URI .'/assets/js/slick.min.js', ['jquery'], false, true );
-		wp_register_script( 'gsap-min-js', ASM_DIR_URI .'/assets/js/gsap/minified/gsap.min.js', [], false, true );
-		wp_register_script( 'ScrollTrigger-min-js', ASM_DIR_URI .'/assets/js/gsap/minified/ScrollTrigger.min.js', ['gsap-min-js'], false, true );
+		wp_register_script( 'slick-js', ASM_BUILD_LIB_URI .'/js/slick.min.js', ['jquery'], false, true );
+		wp_register_script( 'gsap-min-js', ASM_BUILD_LIB_URI .'/js/gsap.min.js', [], false, true );
+		wp_register_script( 'ScrollTrigger-min-js', ASM_BUILD_LIB_URI .'/js/ScrollTrigger.min.js', ['gsap-min-js'], false, true );
 		wp_register_script( 'main-js', ASM_BUILD_JS_URI .'/main.js', ['jquery','slick-js'], false, true );
-		wp_register_script( 'bootstrap-js', ASM_DIR_URI .'/assets/src/library/js/bootstrap.min.js', [ 'jquery' ], false, true );
+		wp_register_script( 'bootstrap-js', ASM_BUILD_LIB_URI .'/js/bootstrap.min.js', [ 'jquery' ], false, true );
 		
     	// enqueue scripts
     	wp_enqueue_script( 'bootstrap-js' );

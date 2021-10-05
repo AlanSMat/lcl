@@ -41,6 +41,10 @@ if ( ! defined( 'ASM_BUILD_CSS_URI' ) ) {
 	define( 'ASM_BUILD_CSS_URI', untrailingslashit( get_template_directory_uri() ) . "/assets/build/css" );
 }
 
+if ( ! defined( 'ASM_BUILD_LIB_URI' ) ) {
+	define( 'ASM_BUILD_LIB_URI', untrailingslashit( get_template_directory_uri() ) . "/assets/build/library" );
+}
+
 if ( ! function_exists( 'dump' ) ) :
 	/**
 	 * debug function outputs php array / object in readable form instead of on one line

@@ -1,4 +1,6 @@
-// styles
+import './gsap';
+import './slider';
+
 import '../sass/main.scss';
 
 // images
