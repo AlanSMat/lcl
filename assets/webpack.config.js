@@ -1,7 +1,7 @@
 const path = require( 'path' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
-const CssMinimizerWebpackPlugin = require( 'css-minimizer-webpack-plugin' );
-//const cssnano = require( 'cssnano' ); // https://cssnano.co/
+const OptimizeCssAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
+const cssnano = require( 'cssnano' ); // https://cssnano.co/
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 const CopyPlugin = require('copy-webpack-plugin'); // https://webpack.js.org/plugins/copy-webpack-plugin/
@@ -85,7 +85,9 @@ module.exports = ( env, argv ) => ({
     },
     optimization: {
         minimizer: [
-            new CssMinimizerWebpackPlugin (),
+			new OptimizeCssAssetsPlugin( {
+				cssProcessor: cssnano
+			} ),
             new UglifyJsPlugin({
                 cache: false,
                 parallel: true,
