@@ -25,7 +25,7 @@
 <header id="masthead" class="site-header" role="banner">
 	<?php get_template_part('template-parts/nav/nav','bootstrap'); ?>    
 	<?php if (is_front_page()) : ?>		
-		<?php get_template_part('template-parts/header/header','static-image'); ?>    
+		<?php get_template_part('template-parts/header/header','slider'); ?>    
 	<?php else : ?>
 		<?php get_template_part('template-parts/header/header','page'); ?>    
 	<?php endif ?>

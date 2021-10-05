@@ -18,7 +18,7 @@
 		"wordpress",
 		"themes"
 	],
-	"author": "Imran Sayed",
+	"author": "Steve Mather",
 	"license": "MIT",
 	"private": true,
 	"devDependencies": {

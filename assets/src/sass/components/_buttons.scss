@@ -1,20 +1,45 @@
 @use '../abstracts/' as *;
 
-.btn {
-    background-color: $color-secondary;
-    border: 1px solid $color-secondary;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.9em;
-    border-radius: 0;
-    &:hover {
-        color: #fff;
-        background-color: $color-secondary-600;
-    }
-}
+// .btn {
+//     background-color: $color-secondary;
+//     border: 1px solid $color-secondary;
+//     color: #fff;
+//     text-transform: uppercase;
+//     font-weight: bold;
+//     font-size: 0.9em;
+//     border-radius: 0;
+//     &:hover {
+//         color: #fff;
+//         background-color: $color-secondary-600;
+//     }
+// }
 
 .btn-lg {
-    padding: .8em 1.5em;
+    padding: .5em 1em;
     border: 1px solid $color-secondary;
 }
+
+.btn {
+    padding: 0.8em 1.6em;
+    font-size: .9em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: $color-secondary;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 4px #999;
+    &:hover {
+        transform: translateY(1px);        
+        background-color: $color-secondary-700;
+        box-shadow: 1px 2px #666;
+    }
+    &:active {
+        background-color: $color-primary;
+        //box-shadow: 2px 3px #666;
+        //transform: translateY(2px);        
+    }
+  }
