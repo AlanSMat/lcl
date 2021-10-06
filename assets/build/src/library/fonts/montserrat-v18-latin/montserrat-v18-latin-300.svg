@@ -1,1 +1,1 @@
-export default "../../src/library/fonts/montserrat-v18-latin/montserrat-v18-latin-300.svg";
+export default "../src/library/fonts/montserrat-v18-latin/montserrat-v18-latin-300.svg";

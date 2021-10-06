@@ -26,7 +26,11 @@ get_header();
 
         </div>
         <?php the_content(); ?>
-
+        <p>
+          <?php 
+          std_button( wp_get_referer(), 'Back' );
+          ?>
+        </p>
       </div><!-- .entry-content -->
     </article><!-- #post-<?php the_ID(); ?> -->
   </div> <!-- end container -->

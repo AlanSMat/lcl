@@ -59,6 +59,25 @@ if ( ! function_exists( 'dump' ) ) :
 endif;
 add_action( "after_theme_setup","dump" );
 
+if ( ! function_exists( 'std_button' ) ) :
+	/**
+	 * Outputs a standard button
+	 * @param $btn_href - hyper link
+	 * @param $btn_text - button text
+	 */
+	function std_button( $btn_href, $btn_text ) {
+		?>
+			<button class="learn-more" onclick="location.href='<?php echo esc_html( $btn_href ); ?>'">
+			<span class="circle" aria-hidden="true">
+				<span class="icon arrow"></span>
+			</span>
+			<span class="button-text"><?php echo $btn_text; ?></span>
+			</button>
+		<?php
+	}
+
+endif;
+
 require_once ASM_DIR_PATH . '/inc/helpers/autoloader.php';
 //require_once ASM_DIR_PATH . '/inc/helpers/template-tags.php';
 

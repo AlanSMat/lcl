@@ -10,7 +10,7 @@
       <div class="col-lg-8">
         <h3><?php the_title() ?></h3>
         <?php the_excerpt() ?>
-        <a href="<?php the_permalink(); ?>" class="btn btn-sml btn-primary">Read more</a>
+        <?php std_button( get_the_permalink(), 'Read More' ); ?>
       </div>
     </div>
     <?php endwhile ?>

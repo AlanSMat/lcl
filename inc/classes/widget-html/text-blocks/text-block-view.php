@@ -8,13 +8,10 @@
       <h1><?php echo $instance['title']; ?></h1>
       <p><?php echo nl2br($instance['details']); ?></p>
       <p>
-        <button class="learn-more" onclick="location.href='<?php echo $instance['linkuri']; ?>'">
-          <span class="circle" aria-hidden="true">
-            <span class="icon arrow"></span>
-          </span>
-          <span class="button-text"><?php echo $instance['linktext']; ?></span>
-        </button>
-        </p>
+        <?php 
+        std_button( $instance['linkuri'], $instance['linktext'] );
+        ?>
+      </p>
     </div>
   </div>
 </div>
