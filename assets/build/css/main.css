@@ -620,6 +620,10 @@ a {
   font-weight: 400;
 }
 
+footer {
+  overflow: hidden;
+}
+
 a {
   color: #2B4d4F;
 }
@@ -679,32 +683,89 @@ a:hover {
   height: 50em;
 }
 
-.btn-lg {
-  padding: 0.5em 1em;
-  border: 1px solid #6C5D4E;
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
 }
 
-.btn {
-  padding: 0.8em 1.6em;
-  font-size: 0.9em;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: center;
+button {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
   outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: #c4beb8;
+  padding: 0;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+button.learn-more {
+  width: 11rem;
+  height: auto;
+}
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 2.3rem;
+  height: 2.3rem;
+  background: #a79e95;
+}
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.225rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.25rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #6C5D4E;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+button:hover .circle {
+  width: 100%;
+}
+button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+button:hover .button-text {
   color: #fff;
-  background-color: #6C5D4E;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 3px 4px #999;
-}
-.btn:hover {
-  transform: translateY(1px);
-  background-color: #7b6d60;
-  box-shadow: 1px 2px #666;
-}
-.btn:active {
-  background-color: #2B4d4F;
 }
 
 .div1, .div2 {
@@ -742,9 +803,6 @@ a:hover {
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-}
-.home-text-block-container .picture-block {
-  margin-left: -5px;
 }
 .home-text-block-container img {
   width: 100%;
@@ -838,7 +896,7 @@ header .header-image-container .header-text h1 {
 }
 header .header-image-container .header-text p {
   color: #fff;
-  animation-name: moveInRight;
+  animation-name: moveInBottom;
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
@@ -857,28 +915,37 @@ header .header-image-container .page-header-title h1 {
 footer {
   background-color: #6C5D4E;
 }
-footer .container {
-  padding: 3em 0;
+footer .container .row {
+  padding: 3em 1.5em;
 }
-footer h5 {
-  font-size: 1em;
-  text-transform: uppercase;
-}
-footer h5, footer p, footer ul, footer li {
+footer .container .row .footer-col h5, footer .container .row .footer-col p, footer .container .row .footer-col ul, footer .container .row .footer-col li {
   color: #fff;
 }
-footer ul {
+footer .container .row .footer-col h5 {
+  font-size: 1em;
+  text-transform: uppercase;
+  margin-top: 1em;
+}
+@media (min-width: 768px) {
+  footer .container .row .footer-col h5 {
+    margin-top: 0;
+  }
+}
+footer .container .row .footer-col ul {
   padding-left: 1.3rem;
 }
-footer ul li {
+footer .container .row .footer-col ul li {
   padding: 0.2rem 0;
 }
-footer a {
+footer .container .row .footer-col a {
   color: #fff;
   text-decoration: none;
 }
-footer a:hover {
+footer .container .row .footer-col a:hover {
   color: #adadad;
+}
+footer .container .row .footer-col:first-child h5 {
+  margin-top: 0;
 }
 
 .main-nav {
@@ -890,7 +957,7 @@ footer a:hover {
   z-index: 10;
 }
 .main-nav .navbar-toggler {
-  background-color: #fff;
+  background-color: #2B4d4F;
 }
 .main-nav .navbar-collapse .nav-item {
   padding-right: 1em;

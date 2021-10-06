@@ -1,45 +1,96 @@
 @use '../abstracts/' as *;
 
-// .btn {
-//     background-color: $color-secondary;
-//     border: 1px solid $color-secondary;
-//     color: #fff;
-//     text-transform: uppercase;
-//     font-weight: bold;
-//     font-size: 0.9em;
-//     border-radius: 0;
-//     &:hover {
-//         color: #fff;
-//         background-color: $color-secondary-600;
-//     }
-// }
-
-.btn-lg {
-    padding: .5em 1em;
-    border: 1px solid $color-secondary;
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
 }
 
-.btn {
-    padding: 0.8em 1.6em;
-    font-size: .9em;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: $color-secondary;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 3px 4px #999;
-    &:hover {
-        transform: translateY(1px);        
-        background-color: $color-secondary-700;
-        box-shadow: 1px 2px #666;
+* {
+  box-sizing: border-box;
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: $color-secondary-300;
+  padding: 0;
+  font-size: .9rem;
+  font-family: inherit;
+  //border-radius: 1.625rem;
+  &.learn-more {
+    width: 11rem;
+    height: auto;
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 2.3rem;
+      height: 2.3rem;
+      background: $color-secondary-400;
+      //border-radius: 1.625rem;
+      .icon {
+        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $color-white;
+        &.arrow {
+          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          left: 0.225rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+          &::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-right: 0.125rem solid #fff;
+            transform: rotate(45deg);
+          }
+        }
+      }
     }
-    &:active {
-        background-color: $color-primary;
-        //box-shadow: 2px 3px #666;
-        //transform: translateY(2px);        
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: $color-secondary;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
     }
   }
+  &:hover {
+    .circle {
+      width: 100%;
+      .icon {
+        &.arrow {
+        background: $color-white;
+        transform: translate(1rem, 0);
+        }
+      }
+    }
+    .button-text {
+      color: $color-white;
+    }
+  }
+}

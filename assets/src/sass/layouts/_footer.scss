@@ -3,26 +3,39 @@
 footer {
     background-color: $color-secondary;
     .container {
-        padding: 3em 0;
-    }
-    h5 {
-        font-size: 1em;
-        text-transform: uppercase;
-    }
-    h5, p, ul, li {
-        color: #fff;
-    }
-    ul {
-        padding-left: 1.3rem;
-        li {
-            padding: .2rem 0;
+        .row {
+            padding: 3em 1.5em;    
+            .footer-col {
+                h5, p, ul, li {
+                    color: #fff;
+                }
+                h5 {
+                    font-size: 1em;
+                    text-transform: uppercase;
+                    margin-top: 1em;
+                    @include respond-above(sm) {
+                        margin-top: 0;
+                    }
+                }
+                ul {
+                    padding-left: 1.3rem;
+                    li {
+                        padding: .2rem 0;
+                    }
+                }
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+                a:hover {
+                    color: $color-grey-300;
+                }
+                &:first-child {
+                    h5 {
+                        margin-top: 0;
+                    }
+                }
+            }
         }
-    }
-    a {
-        color: #fff;
-        text-decoration: none;
-    }
-    a:hover {
-        color: $color-grey-300;
     }
 }  
