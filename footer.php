@@ -25,6 +25,17 @@
   </div>
 </footer>
 <?php wp_footer() ?>
+<script>
+//   $(document).ready(function() {
+//   "use strict";
+
+//   $('.nav-item').click(function(e) {
+//     e.preventDefault();
+//     $('.nav-item').removeClass('active');
+//     $(this).addClass('active');
+//   });
+// });
+</script>
 </body>
 
 </html>

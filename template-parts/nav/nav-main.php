@@ -10,6 +10,7 @@ $header_menu_id = $menu_class->get_menu_id( 'asm-header-menu' );
 $header_menus = wp_get_nav_menu_items( $header_menu_id );
 
 $current_page_title = get_the_title();
+
 ?>
 <script>
     

@@ -9,6 +9,7 @@ $menu_class = \ASM_THEME\Inc\Menus::get_instance();
 $header_menu_id = $menu_class->get_menu_id( 'asm-header-menu' );
 $header_menus = wp_get_nav_menu_items( $header_menu_id );
 
+$current_page_title = single_post_title( '', false );
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark main-nav">
 
@@ -39,7 +40,7 @@ $header_menus = wp_get_nav_menu_items( $header_menu_id );
             if( ! $has_children ) :
             ?>
               <li class="nav-item">
-                <a class="nav-link" href="<?php echo esc_url( $menu_item->url ) ?>"><?php echo esc_html( $menu_item->title ) ?></a>
+                <a class="nav-link <?php $current_page_title === $menu_item->title ? print 'active' : print '' ; ?>" href="<?php echo esc_url( $menu_item->url ) ?>"><?php echo esc_html( $menu_item->title ) ?></a>
               </li>
             <?php 
               else :  
@@ -50,9 +51,10 @@ $header_menus = wp_get_nav_menu_items( $header_menu_id );
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <?php  
+                  // dropdown
                   foreach( $child_menu_items as $child_menu_item ) : 
                   ?>
-                    <a class="dropdown-item" href="<?php echo esc_html( $child_menu_item->url ) ?>">
+                    <a class="dropdown-item <?php $current_page_title === $child_menu_item->title ? print 'dropdown-active' : print '' ; ?>" href="<?php echo esc_html( $child_menu_item->url ) ?>">
                       <?php echo esc_html( $child_menu_item->title ) ?>
                     </a>
                   <?php  
